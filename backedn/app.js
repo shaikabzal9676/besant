@@ -18,7 +18,7 @@ mongoose.connect('mongodb+srv://shaikabzal626:pe41hbP2TJQma2WM@cluster1.gtbu2.mo
   .catch(err => console.error(err));
 
 app.get('/',(req,res)=>{
-    res.send("Hello")
+    res.json("Hello")
   })
 
   app.post('/users/register', async (req, res) => {
