@@ -13,7 +13,7 @@ function Homepage() {
 
   useEffect(() => {
     axios
-      .get("https://besant-b2gc.onrender.com/users")
+      .get("https://localhost:5000/users")
       .then((response) => {
         setUsers(response.data);
       })
@@ -37,7 +37,7 @@ function Homepage() {
   const updateUser = async (userId, newName, newPhone) => {
     try {
       const response = await axios.put(
-        `https://besant-b2gc.onrender.com/users/${userId._id}`,
+        `https://localhost:5000/users/${userId._id}`,
         {
           name: newName,
           phone: newPhone,
@@ -51,7 +51,7 @@ function Homepage() {
 
   const handleDelete = (userId) => {
     axios
-      .delete(`https://besant-b2gc.onrender.com/users/${userId}`)
+      .delete(`https://localhost:5000/users/${userId}`)
       .then((response) => {
         toast.success("User deleted successfully!");
         setUsers(users.filter((user) => user._id !== userId));
