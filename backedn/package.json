@@ -133,16 +133,13 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build":"npm i"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shaikabzal9676/Assigment_besant.git"
+    "type": "git"
+
   },
   "author": "abzal",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shaikabzal9676/Assigment_besant/issues"
-  },
-  "homepage": "https://github.com/shaikabzal9676/Assigment_besant#readme"
+  "license": "ISC"
 }
