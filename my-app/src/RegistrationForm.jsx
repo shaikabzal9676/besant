@@ -323,7 +323,7 @@ const navigate=useNavigate()
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/users/register', {
+      const response = await axios.post('https://besant-b2gc.onrender.com/users/register', {
         name,
         email,
         password,
