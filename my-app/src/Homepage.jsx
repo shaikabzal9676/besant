@@ -13,7 +13,7 @@ function Homepage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/users")
+      .get("https://assigment-besant-1.onrender.com/users")
       .then((response) => {
         setUsers(response.data);
       })
@@ -37,7 +37,7 @@ function Homepage() {
   const updateUser = async (userId, newName, newPhone) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/users/${userId._id}`,
+        `https://assigment-besant-1.onrender.com/users/${userId._id}`,
         {
           name: newName,
           phone: newPhone,
@@ -51,7 +51,7 @@ function Homepage() {
 
   const handleDelete = (userId) => {
     axios
-      .delete(`http://localhost:5000/users/${userId}`)
+      .delete(`https://assigment-besant-1.onrender.com/users/${userId}`)
       .then((response) => {
         toast.success("User deleted successfully!");
         setUsers(users.filter((user) => user._id !== userId));
