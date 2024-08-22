@@ -1,67 +1,49 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
+
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 const navigate=useNavigate();
   const handleLogin = async () => {
     try {
-      const response = await axios.post("https://assigment-besant-2.onrender.com/login", {
-        email,
-        password,
-      });
+      const response = await axios.post('http://localhost:5000/login', { email, password });
       if (response.data.success) {
         // Redirect to home page
-        window.location.href = "/home";
+        navigate('/home')
       } else {
-        alert("Incorrect email or password. Please try again.");
+        alert('Incorrect email or password. Please try again.');
       }
     } catch (error) {
-      alert("Login failed. Please try again.");
+      alert('Login failed. Please try again.');
     }
   };
 
-  const handleS=()=>{
+  const handleSv=()=>{
     navigate('/register')
   }
   return (
-    <div className="login-page">
+    <div className='login-page'>
       <h1>Login Page</h1>
       <div className="login-form">
-        <div className="input-group mb-3">
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Email"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="input-group mb-3">
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+      <div className="input-group mb-3">
+  
+  <input type="email" className="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+</div>
+      <div className="input-group mb-3">
+  
+    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"  value={password} onChange={(e) => setPassword(e.target.value)}/>
+</div>
 
-        <button className="btn btn-success" onClick={handleLogin}>
-          Login
-        </button>
-        <p>
-          Don't have an account?{" "}
-          <span>
-            <button onClick={handleS}>Register</button>
-          </span>
-        </p>
+      <button className='btn btn-success' onClick={handleLogin}>Login</button>
+      <p>
+          Don't have an account? <button onClick={handleSv}>Register</button>
+      </p>
+
       </div>
+      
     </div>
   );
 };

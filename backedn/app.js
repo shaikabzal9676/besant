@@ -13,12 +13,12 @@ app.use(express.json());
 
 // Connect Mongoose
 
-mongoose.connect('mongodb+srv://shaikabzal626:pe41hbP2TJQma2WM@cluster1.gtbu2.mongodb.net/nyapp?retryWrites=true&w=majority&appName=Cluster1', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://shaikabzal626:pe41hbP2TJQma2WM@cluster1.gtbu2.mongodb.net/nyapp?retryWrites=true&w=majority&appName=Cluster1/myapp', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
-app.get('/',(req,res)=>{
-    res.json("Hello")
+  app.get('/',(req,res)=>{
+    res.send("Hello")
   })
 
   app.post('/users/register', async (req, res) => {
@@ -123,5 +123,5 @@ app.delete('/users/:_id', async (req, res) => {
 });
 
   
-const PORT =process.env.PORT|| 5000;
+const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

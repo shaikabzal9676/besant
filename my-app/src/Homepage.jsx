@@ -13,7 +13,7 @@ function Homepage() {
 
   useEffect(() => {
     axios
-      .get("https://assigment-besant-2.onrender.com/users")
+      .get("http://localhost:5000/users")
       .then((response) => {
         setUsers(response.data);
       })
@@ -37,7 +37,7 @@ function Homepage() {
   const updateUser = async (userId, newName, newPhone) => {
     try {
       const response = await axios.put(
-        `https://assigment-besant-2.onrender.com/users/${userId._id}`,
+        `http://localhost:5000/users/${userId._id}`,
         {
           name: newName,
           phone: newPhone,
@@ -51,7 +51,7 @@ function Homepage() {
 
   const handleDelete = (userId) => {
     axios
-      .delete(`https://assigment-besant-2.onrender.com/users/${userId}`)
+      .delete(`http://localhost:5000/users/${userId}`)
       .then((response) => {
         toast.success("User deleted successfully!");
         setUsers(users.filter((user) => user._id !== userId));
@@ -65,7 +65,7 @@ function Homepage() {
     <div className="home-container">
         <div className="nav">
       <h2>Welcome to the Home Page</h2>
-      <button type="button" class="btn btn-danger" onClick={handleLogout}>Logout</button>
+      <button type="button" className="btn btn-danger" onClick={handleLogout}>Logout</button>
       </div>
       <h3>Registered Users:</h3>
       <ul >

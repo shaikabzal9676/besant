@@ -20,7 +20,7 @@
 
 // //   const handleRegister = async () => {
 // //     try {
-// //       const response = await axios.post('https://assigment-besant-2.onrender.com/register', userData);
+// //       const response = await axios.post('http://localhost:5000/register', userData);
 // //       alert('Registration successful!');
 // //       setUserData(response)
 // //     } catch (error) {
@@ -148,7 +148,7 @@
 
 //     // Make a POST request to the backend API to register the user
 //     try {
-//       const response = await axios.post('https://assigment-besant-2.onrender.com/register', {
+//       const response = await axios.post('http://localhost:5000/register', {
 //         name,
 //         password,
 //         email,
@@ -218,7 +218,7 @@
 //     e.preventDefault();
 //     setLoading(true);
 
-//     axios.post('https://assigment-besant-2.onrender.com/users/register', { name, email, password, phone, profession })
+//     axios.post('http://localhost:5000/users/register', { name, email, password, phone, profession })
 //       .then((response) => {
 //         toast.success('Registration successful!');
 //         // Clear the form or redirect to login page
@@ -317,13 +317,13 @@ const RegisterUser = () => {
   const [phone, setPhone] = useState('');
   const [profession, setProfession] = useState('');
   const [loading, setLoading] = useState(false);
-const navigate=useNavigate();
+const navigate=useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await axios.post('https://assigment-besant-2.onrender.com/users/register', {
+      const response = await axios.post('http://localhost:5000/users/register', {
         name,
         email,
         password,
@@ -342,7 +342,7 @@ const navigate=useNavigate();
     }
   };
 
-  const handleSv=()=>{
+  const handleLogin=()=>{
     navigate('/')
   }
   return (
@@ -410,7 +410,7 @@ const navigate=useNavigate();
         </button>
       </form>
       <p>
-       Already have an account? <button onClick={handleSv}>Login</button>
+       Already have an account? <button onClick={handleLogin}>Login Here</button>
         </p>
     </div>
     </div>
