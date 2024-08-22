@@ -17,6 +17,10 @@ mongoose.connect('mongodb+srv://shaikabzal626:pe41hbP2TJQma2WM@cluster1.gtbu2.mo
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
+app.get('/',(req,res)=>{
+    res.send("Hello")
+  })
+
   app.post('/users/register', async (req, res) => {
     const { name, email, password, phone, profession } = req.body;
   
