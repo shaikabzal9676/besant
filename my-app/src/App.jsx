@@ -1,27 +1,3 @@
-// import React, { useState } from 'react'
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-// import LoginForm  from "./LoginForm"
-// import Register from './RegistrationForm'
-// import "./App.css"
-// function App() {
-
-//   const [isLogin, setIsLogin] = useState(true);
-
-//   const toggleForm = () => {
-//     setIsLogin(!isLogin);
-//   };
-
-//   return (
-//     <div className="App">
-//       {isLogin ? <LoginForm toggleForm={toggleForm} /> : <Register toggleForm={toggleForm} />}
-//     </div>
-//   );
-// }
-
-
-// export default App
-
-
 
 
 import React from 'react';
