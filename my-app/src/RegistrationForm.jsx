@@ -20,7 +20,7 @@
 
 // //   const handleRegister = async () => {
 // //     try {
-// //       const response = await axios.post('https://assigment-besant-1.onrender.com/register', userData);
+// //       const response = await axios.post('https://assigment-besant-2.onrender.com/register', userData);
 // //       alert('Registration successful!');
 // //       setUserData(response)
 // //     } catch (error) {
@@ -148,7 +148,7 @@
 
 //     // Make a POST request to the backend API to register the user
 //     try {
-//       const response = await axios.post('https://assigment-besant-1.onrender.com/register', {
+//       const response = await axios.post('https://assigment-besant-2.onrender.com/register', {
 //         name,
 //         password,
 //         email,
@@ -218,7 +218,7 @@
 //     e.preventDefault();
 //     setLoading(true);
 
-//     axios.post('https://assigment-besant-1.onrender.com/users/register', { name, email, password, phone, profession })
+//     axios.post('https://assigment-besant-2.onrender.com/users/register', { name, email, password, phone, profession })
 //       .then((response) => {
 //         toast.success('Registration successful!');
 //         // Clear the form or redirect to login page
@@ -322,7 +322,7 @@ const RegisterUser = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://assigment-besant-1.onrender.com/users/register', {
+      const response = await axios.post('https://assigment-besant-2.onrender.com/users/register', {
         name,
         email,
         password,

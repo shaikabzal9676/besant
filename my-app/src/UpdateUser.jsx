@@ -18,7 +18,7 @@ const UpdateUser = () => {
     e.preventDefault();
     setLoading(true);
 
-    axios.put(`https://assigment-besant-1.onrender.com/users/${location.state._id}`, { name,email, phone ,profession})
+    axios.put(`https://assigment-besant-2.onrender.com/users/${location.state._id}`, { name,email, phone ,profession})
       .then((response) => {
         toast.success('User updated successfully!');
         navigate('/home');
