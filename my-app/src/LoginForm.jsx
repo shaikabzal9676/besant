@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+const navigate=useNavigate();
   const handleLogin = async () => {
     try {
       const response = await axios.post("https://assigment-besant-2.onrender.com/login", {
@@ -22,14 +23,17 @@ const LoginForm = () => {
     }
   };
 
+  const handleS=()=>{
+    navigate('/register')
+  }
   return (
     <div className="login-page">
       <h1>Login Page</h1>
       <div className="login-form">
-        <div class="input-group mb-3">
+        <div className="input-group mb-3">
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             placeholder="Email"
             aria-label="Username"
             aria-describedby="basic-addon1"
@@ -37,10 +41,10 @@ const LoginForm = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div class="input-group mb-3">
+        <div className="input-group mb-3">
           <input
             type="password"
-            class="form-control"
+            className="form-control"
             id="exampleInputPassword1"
             placeholder="Password"
             value={password}
@@ -54,7 +58,7 @@ const LoginForm = () => {
         <p>
           Don't have an account?{" "}
           <span>
-            <a href="/register">Register here</a>
+            <button onClick={handleS}>Register</button>
           </span>
         </p>
       </div>

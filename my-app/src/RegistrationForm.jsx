@@ -308,6 +308,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterUser = () => {
   const [name, setName] = useState('');
@@ -316,7 +317,7 @@ const RegisterUser = () => {
   const [phone, setPhone] = useState('');
   const [profession, setProfession] = useState('');
   const [loading, setLoading] = useState(false);
-
+const navigate=useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -341,6 +342,9 @@ const RegisterUser = () => {
     }
   };
 
+  const handleSv=()=>{
+    navigate('/')
+  }
   return (
     <div className="container mt-3">
       <h2>Register</h2>
@@ -406,7 +410,7 @@ const RegisterUser = () => {
         </button>
       </form>
       <p>
-       Already have an account? <a href="/">Login here</a>
+       Already have an account? <button onClick={handleSv}>Login</button>
         </p>
     </div>
     </div>
