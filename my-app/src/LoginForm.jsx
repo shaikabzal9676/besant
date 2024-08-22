@@ -9,7 +9,7 @@ const LoginForm = () => {
 const navigate=useNavigate();
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post('https://besant-b2gc.onrender.com/login', { email, password });
       if (response.data.success) {
         // Redirect to home page
         navigate('/home')
